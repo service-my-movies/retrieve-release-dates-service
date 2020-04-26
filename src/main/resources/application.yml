@@ -1,0 +1,32 @@
+# Name Service
+spring:
+  application:
+    name: retrieve-release-dates-service
+
+# Port Service
+server:
+  port: 8018
+
+# API URL
+resource:
+  api:
+    url: 
+      base: https://api.themoviedb.org/3/movie/
+      image: https://image.tmdb.org/t/p/w500
+    key: "?api_key=0a2eea61408ba5facdd057f7d11d2f58"
+    language: "&language=fr-FR"
+
+# DEBUG    
+debug: true
+
+# LOG
+#logging:
+#  path: /var/log/retrieve-release-dates-service/
+#  file: /var/log/retrieve-release-dates-service/retrieve-release-dates-service.log
+
+# Eureka Client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+      
