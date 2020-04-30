@@ -3,6 +3,7 @@ package com.mymovies.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +12,7 @@ import com.mymovies.service.IReleaseDatesService;
 
 @Controller
 @RequestMapping("/release_dates")
+@RefreshScope
 public class ReleaseDatesController implements IReleaseDatesController {
 	
 	@Autowired

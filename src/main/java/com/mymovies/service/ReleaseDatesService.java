@@ -32,9 +32,13 @@ public class ReleaseDatesService implements IReleaseDatesService {
 	public Release_DatesDTO getAPI_ReleaseDates(String movie_id) {
 
 		Release_DatesDTO release_Dates = null;
+		
+		String url = BASE_URL+movie_id+"/release_dates"+API_KEY;
+		
+		LOGGER.info("@Get getAPI_ReleaseDates Service URL : " + url);
 
 		try {
-			release_Dates = restTemplate.getForObject(BASE_URL+movie_id+"/release_dates"+API_KEY, Release_DatesDTO.class);
+			release_Dates = restTemplate.getForObject(url, Release_DatesDTO.class);
 		} catch (Exception e) {
 			LOGGER.error("Unexpected Error From Service: getAPI_ReleaseDates: " + e);
 		}
